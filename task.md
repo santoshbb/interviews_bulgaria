@@ -52,7 +52,8 @@ Communication can happen over either of two channels — the manufacturer suppor
 - **SAP RFC** (Remote Function Call) — synchronous, program-to-program communication
 - **Flat-file exchange via SFTP** — asynchronous, file-based batch communication
 - **REST API calls**  - synchronous, program-to-program communication
-**IF you don't have contextual SAP knowledge, treate this part of the task as any external system that exposes REST APIs for CRUD on car orders**
+
+**IF you don't have contextual SAP knowledge, treat this part of the task as any external system that exposes REST APIs for CRUD on car orders**
 
 ---
 
