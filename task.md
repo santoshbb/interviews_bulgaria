@@ -106,7 +106,7 @@ Your submission will be evaluated on three dimensions:
 ---
 
 ## Submission
-
-Please return your completed document within **1 working day** of receiving this brief. Send it as an email attachment or share a link, as instructed by your recruiter.
+ 
+ Send it as an email attachment or share a link with us in through the channel we've communicated with you.
 
 Good luck!
