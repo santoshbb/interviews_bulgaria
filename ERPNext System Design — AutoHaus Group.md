@@ -4,6 +4,9 @@
 **Date:** March 2026
 
 ---
+<img src="images/autohaus_workflow.svg" width="600">
+---
+
 
 # Part 1: Data Model Design
 
