@@ -4,7 +4,7 @@
 **Date:** March 2026
 
 ---
-<img src="autohaus_workflow.svg" width="600">
+<img src="autohaus_workflow.svg" width="1000">
 ---
 
 
@@ -162,6 +162,7 @@ Reasons:
 
 ## Questions for the Customer
 
+- When should the order be placed with the manufacturer: before receiving the customer order or after?**
 - Expected **number of transactions per day**
 - **Number of users** requiring training
 - **Budget** planned for full implementation and training
