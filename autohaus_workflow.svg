@@ -1,0 +1,285 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 1320" width="1100" height="1320" font-family="Arial, sans-serif">
+
+  <!-- Background -->
+  <rect width="1100" height="1320" fill="#f8fafc"/>
+
+  <!-- Title -->
+  <rect x="30" y="18" width="1040" height="52" rx="10" fill="#1e293b"/>
+  <text x="550" y="40" text-anchor="middle" font-size="15" font-weight="700" fill="#fff">AutoHaus Group — ERPNext End-to-End Workflow</text>
+  <text x="550" y="60" text-anchor="middle" font-size="11" fill="#94a3b8">Vehicle Ordering · Order Confirmation · Daily Pricing Update</text>
+
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <!-- SECTION 1: VEHICLE ORDERING                                -->
+  <!-- ═══════════════════════════════════════════════════════════ -->
+
+  <!-- Section header -->
+  <rect x="30" y="84" width="1040" height="28" rx="6" fill="#0f172a"/>
+  <text x="550" y="103" text-anchor="middle" font-size="12" font-weight="700" fill="#38bdf8">① VEHICLE ORDERING FLOW  (ERPNext → SAP S/4HANA)</text>
+
+  <!-- Swimlane backgrounds -->
+  <rect x="30" y="116" width="230" height="370" rx="8" fill="#fffbeb" stroke="#fde68a" stroke-width="1.5"/>
+  <text x="145" y="136" text-anchor="middle" font-size="10" font-weight="700" fill="#92400e">SALES STAFF</text>
+
+  <rect x="270" y="116" width="230" height="370" rx="8" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1.5"/>
+  <text x="385" y="136" text-anchor="middle" font-size="10" font-weight="700" fill="#1d4ed8">ERPNext CORE</text>
+
+  <rect x="510" y="116" width="230" height="370" rx="8" fill="#f0fdf4" stroke="#bbf7d0" stroke-width="1.5"/>
+  <text x="625" y="136" text-anchor="middle" font-size="10" font-weight="700" fill="#166534">INTEGRATION LAYER</text>
+
+  <rect x="750" y="116" width="320" height="370" rx="8" fill="#fef9ee" stroke="#fde68a" stroke-width="1.5"/>
+  <text x="910" y="136" text-anchor="middle" font-size="10" font-weight="700" fill="#92400e">SAP S/4HANA</text>
+
+  <!-- Step 1 -->
+  <rect x="45" y="148" width="200" height="48" rx="8" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="145" y="168" text-anchor="middle" font-size="11" font-weight="700" fill="#78350f">1. Configure Vehicle Order</text>
+  <text x="145" y="184" text-anchor="middle" font-size="9" fill="#92400e">Select Model · Color · Options/Packages</text>
+
+  <!-- arrow down -->
+  <line x1="145" y1="196" x2="145" y2="218" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Step 2 -->
+  <rect x="45" y="218" width="200" height="48" rx="8" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="145" y="238" text-anchor="middle" font-size="11" font-weight="700" fill="#78350f">2. Submit Quotation</text>
+  <text x="145" y="254" text-anchor="middle" font-size="9" fill="#92400e">ERPNext Quotation Doctype created</text>
+
+  <!-- arrow right to ERPNext -->
+  <line x1="245" y1="242" x2="280" y2="242" stroke="#1d4ed8" stroke-width="1.5" marker-end="url(#arrb)"/>
+
+  <!-- Step 3 -->
+  <rect x="285" y="218" width="200" height="48" rx="8" fill="#dbeafe" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="385" y="238" text-anchor="middle" font-size="11" font-weight="700" fill="#1e3a8a">3. Sales Order Created</text>
+  <text x="385" y="254" text-anchor="middle" font-size="9" fill="#1d4ed8">Triggers Approval Workflow</text>
+
+  <!-- arrow down -->
+  <line x1="385" y1="266" x2="385" y2="288" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Step 4 -->
+  <rect x="285" y="288" width="200" height="48" rx="8" fill="#dbeafe" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="385" y="308" text-anchor="middle" font-size="11" font-weight="700" fill="#1e3a8a">4. Purchase Order (Vehicle)</text>
+  <text x="385" y="324" text-anchor="middle" font-size="9" fill="#1d4ed8">Custom fields: VIN · Model · Options</text>
+
+  <!-- arrow right to Integration -->
+  <line x1="485" y1="312" x2="520" y2="312" stroke="#166534" stroke-width="1.5" marker-end="url(#arrg)"/>
+
+  <!-- Step 5 -->
+  <rect x="525" y="288" width="200" height="48" rx="8" fill="#dcfce7" stroke="#22c55e" stroke-width="1.5"/>
+  <text x="625" y="308" text-anchor="middle" font-size="11" font-weight="700" fill="#14532d">5. REST Adapter</text>
+  <text x="625" y="324" text-anchor="middle" font-size="9" fill="#166534">Serialize PO → ORDERS05 JSON payload</text>
+
+  <!-- arrow right to SAP -->
+  <line x1="725" y1="312" x2="760" y2="312" stroke="#b45309" stroke-width="1.5" marker-end="url(#arro)"/>
+
+  <!-- Step 6 -->
+  <rect x="765" y="288" width="290" height="48" rx="8" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="910" y="308" text-anchor="middle" font-size="11" font-weight="700" fill="#78350f">6. SAP Order API</text>
+  <text x="910" y="324" text-anchor="middle" font-size="9" fill="#92400e">Receives ORDERS05 · Validates · Queues order</text>
+
+  <!-- SAP response arrow back -->
+  <line x1="910" y1="336" x2="910" y2="368" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Step 7 -->
+  <rect x="765" y="368" width="290" height="48" rx="8" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="910" y="388" text-anchor="middle" font-size="11" font-weight="700" fill="#78350f">7. SAP Response: 200 OK</text>
+  <text x="910" y="404" text-anchor="middle" font-size="9" fill="#92400e">Returns SAP Order Ref + Provisional ETA</text>
+
+  <!-- back to ERPNext -->
+  <line x1="765" y1="392" x2="725" y2="392" stroke="#7c3aed" stroke-width="1.5" marker-end="url(#arrp)"/>
+
+  <!-- Step 8 -->
+  <rect x="525" y="368" width="200" height="48" rx="8" fill="#dcfce7" stroke="#22c55e" stroke-width="1.5"/>
+  <text x="625" y="388" text-anchor="middle" font-size="11" font-weight="700" fill="#14532d">8. Update Purchase Order</text>
+  <text x="625" y="404" text-anchor="middle" font-size="9" fill="#166534">Store SAP Ref on PO · Status: Ordered</text>
+
+  <line x1="525" y1="392" x2="485" y2="392" stroke="#7c3aed" stroke-width="1.5" marker-end="url(#arrp)"/>
+
+  <!-- Step 9 -->
+  <rect x="285" y="368" width="200" height="48" rx="8" fill="#dbeafe" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="385" y="388" text-anchor="middle" font-size="11" font-weight="700" fill="#1e3a8a">9. Vehicle Record Created</text>
+  <text x="385" y="404" text-anchor="middle" font-size="9" fill="#1d4ed8">Status: In-Transit · Linked to Customer</text>
+
+  <!-- Error box -->
+  <rect x="525" y="440" width="540" height="36" rx="8" fill="#fee2e2" stroke="#f87171" stroke-width="1.5"/>
+  <text x="795" y="455" text-anchor="middle" font-size="10" font-weight="700" fill="#dc2626">⚠ ERROR PATH: on 4xx/5xx → Retry ×3 (exp. backoff) → Log to Error Log Doctype → Alert Sales Staff</text>
+  <line x1="910" y1="336" x2="625" y2="440" stroke="#dc2626" stroke-width="1.2" stroke-dasharray="5,3"/>
+
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <!-- SECTION 2: ORDER CONFIRMATION                              -->
+  <!-- ═══════════════════════════════════════════════════════════ -->
+
+  <rect x="30" y="504" width="1040" height="28" rx="6" fill="#0f172a"/>
+  <text x="550" y="523" text-anchor="middle" font-size="12" font-weight="700" fill="#a78bfa">② ORDER CONFIRMATION FLOW  (SAP → ERPNext)</text>
+
+  <!-- Swimlanes -->
+  <rect x="30" y="536" width="240" height="300" rx="8" fill="#fef9ee" stroke="#fde68a" stroke-width="1.5"/>
+  <text x="150" y="556" text-anchor="middle" font-size="10" font-weight="700" fill="#92400e">SAP S/4HANA</text>
+
+  <rect x="280" y="536" width="240" height="300" rx="8" fill="#f0fdf4" stroke="#bbf7d0" stroke-width="1.5"/>
+  <text x="400" y="556" text-anchor="middle" font-size="10" font-weight="700" fill="#166534">INTEGRATION LAYER</text>
+
+  <rect x="530" y="536" width="240" height="300" rx="8" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1.5"/>
+  <text x="650" y="556" text-anchor="middle" font-size="10" font-weight="700" fill="#1d4ed8">ERPNext CORE</text>
+
+  <rect x="780" y="536" width="290" height="300" rx="8" fill="#f0fdf4" stroke="#bbf7d0" stroke-width="1.5"/>
+  <text x="925" y="556" text-anchor="middle" font-size="10" font-weight="700" fill="#166534">NOTIFICATIONS</text>
+
+  <!-- Steps -->
+  <rect x="42" y="568" width="216" height="48" rx="8" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="150" y="588" text-anchor="middle" font-size="11" font-weight="700" fill="#78350f">10. SAP Generates ORDRSP</text>
+  <text x="150" y="604" text-anchor="middle" font-size="9" fill="#92400e">IDoc with Conf. No. · Final ETA · Status</text>
+
+  <line x1="258" y1="592" x2="290" y2="592" stroke="#166534" stroke-width="1.5" marker-end="url(#arrg)"/>
+
+  <rect x="292" y="568" width="216" height="48" rx="8" fill="#dcfce7" stroke="#22c55e" stroke-width="1.5"/>
+  <text x="400" y="588" text-anchor="middle" font-size="11" font-weight="700" fill="#14532d">11. Webhook Endpoint</text>
+  <text x="400" y="604" text-anchor="middle" font-size="9" fill="#166534">POST /api/method/receive_ordrsp</text>
+
+  <line x1="400" y1="616" x2="400" y2="638" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <rect x="292" y="638" width="216" height="48" rx="8" fill="#dcfce7" stroke="#22c55e" stroke-width="1.5"/>
+  <text x="400" y="658" text-anchor="middle" font-size="11" font-weight="700" fill="#14532d">12. Validate &amp; Map</text>
+  <text x="400" y="674" text-anchor="middle" font-size="9" fill="#166534">ORDRSP fields → ERPNext PO fields</text>
+
+  <line x1="508" y1="662" x2="540" y2="662" stroke="#1d4ed8" stroke-width="1.5" marker-end="url(#arrb)"/>
+
+  <rect x="542" y="638" width="216" height="48" rx="8" fill="#dbeafe" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="650" y="658" text-anchor="middle" font-size="11" font-weight="700" fill="#1e3a8a">13. Update Purchase Order</text>
+  <text x="650" y="674" text-anchor="middle" font-size="9" fill="#1d4ed8">ETA · SAP Conf. No. · Status: Confirmed</text>
+
+  <line x1="650" y1="686" x2="650" y2="708" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <rect x="542" y="708" width="216" height="48" rx="8" fill="#ede9fe" stroke="#8b5cf6" stroke-width="1.5"/>
+  <text x="650" y="728" text-anchor="middle" font-size="11" font-weight="700" fill="#4c1d95">14. Update Vehicle Record</text>
+  <text x="650" y="744" text-anchor="middle" font-size="9" fill="#6d28d9">Status: Confirmed · ETA stored</text>
+
+  <line x1="758" y1="662" x2="790" y2="662" stroke="#166534" stroke-width="1.5" marker-end="url(#arrg)"/>
+
+  <rect x="792" y="638" width="266" height="48" rx="8" fill="#dcfce7" stroke="#22c55e" stroke-width="1.5"/>
+  <text x="925" y="658" text-anchor="middle" font-size="11" font-weight="700" fill="#14532d">15. In-App + Email Alert</text>
+  <text x="925" y="674" text-anchor="middle" font-size="9" fill="#166534">Sales Staff notified: ETA confirmed</text>
+
+  <line x1="758" y1="732" x2="790" y2="732" stroke="#166534" stroke-width="1.5" marker-end="url(#arrg)"/>
+
+  <rect x="792" y="708" width="266" height="48" rx="8" fill="#dcfce7" stroke="#22c55e" stroke-width="1.5"/>
+  <text x="925" y="728" text-anchor="middle" font-size="11" font-weight="700" fill="#14532d">16. Dashboard Updated</text>
+  <text x="925" y="744" text-anchor="middle" font-size="9" fill="#166534">Unified inventory view across dealerships</text>
+
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <!-- SECTION 3: DAILY PRICING UPDATE                           -->
+  <!-- ═══════════════════════════════════════════════════════════ -->
+
+  <rect x="30" y="852" width="1040" height="28" rx="6" fill="#0f172a"/>
+  <text x="550" y="871" text-anchor="middle" font-size="12" font-weight="700" fill="#34d399">③ DAILY PRICING UPDATE FLOW  (SAP SFTP → ERPNext Item Prices)</text>
+
+  <!-- Swimlanes -->
+  <rect x="30" y="884" width="220" height="310" rx="8" fill="#fef9ee" stroke="#fde68a" stroke-width="1.5"/>
+  <text x="140" y="904" text-anchor="middle" font-size="10" font-weight="700" fill="#92400e">SAP SFTP Server</text>
+
+  <rect x="260" y="884" width="220" height="310" rx="8" fill="#f0fdf4" stroke="#bbf7d0" stroke-width="1.5"/>
+  <text x="370" y="904" text-anchor="middle" font-size="10" font-weight="700" fill="#166534">SFTP LISTENER (Frappe Cron)</text>
+
+  <rect x="490" y="884" width="220" height="310" rx="8" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1.5"/>
+  <text x="600" y="904" text-anchor="middle" font-size="10" font-weight="700" fill="#1d4ed8">ERPNext ITEM PRICES</text>
+
+  <rect x="720" y="884" width="350" height="310" rx="8" fill="#fff1f2" stroke="#fca5a5" stroke-width="1.5"/>
+  <text x="895" y="904" text-anchor="middle" font-size="10" font-weight="700" fill="#dc2626">ERROR / AUDIT PATH</text>
+
+  <!-- Steps -->
+  <rect x="42" y="916" width="196" height="48" rx="8" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="140" y="936" text-anchor="middle" font-size="11" font-weight="700" fill="#78350f">17. PRICAT File Dropped</text>
+  <text x="140" y="952" text-anchor="middle" font-size="9" fill="#92400e">Daily 02:00 · CSV / IDoc flat-file</text>
+
+  <line x1="238" y1="940" x2="270" y2="940" stroke="#166534" stroke-width="1.5" marker-end="url(#arrg)"/>
+
+  <rect x="272" y="916" width="196" height="48" rx="8" fill="#dcfce7" stroke="#22c55e" stroke-width="1.5"/>
+  <text x="370" y="936" text-anchor="middle" font-size="11" font-weight="700" fill="#14532d">18. Cron Job Polls SFTP</text>
+  <text x="370" y="952" text-anchor="middle" font-size="9" fill="#166534">Frappe scheduled task · nightly</text>
+
+  <line x1="370" y1="964" x2="370" y2="986" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <rect x="272" y="986" width="196" height="48" rx="8" fill="#dcfce7" stroke="#22c55e" stroke-width="1.5"/>
+  <text x="370" y="1006" text-anchor="middle" font-size="11" font-weight="700" fill="#14532d">19. Download &amp; Parse File</text>
+  <text x="370" y="1022" text-anchor="middle" font-size="9" fill="#166534">Read rows: Model · Price · Currency</text>
+
+  <line x1="370" y1="1034" x2="370" y2="1056" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <rect x="272" y="1056" width="196" height="48" rx="8" fill="#dcfce7" stroke="#22c55e" stroke-width="1.5"/>
+  <text x="370" y="1076" text-anchor="middle" font-size="11" font-weight="700" fill="#14532d">20. Validate Rows</text>
+  <text x="370" y="1092" text-anchor="middle" font-size="9" fill="#166534">Check required fields · data types</text>
+
+  <line x1="468" y1="1080" x2="500" y2="1080" stroke="#1d4ed8" stroke-width="1.5" marker-end="url(#arrb)"/>
+
+  <rect x="502" y="1056" width="196" height="48" rx="8" fill="#dbeafe" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="600" y="1076" text-anchor="middle" font-size="11" font-weight="700" fill="#1e3a8a">21. Upsert Item Price</text>
+  <text x="600" y="1092" text-anchor="middle" font-size="9" fill="#1d4ed8">Price List: Manufacturer MSP · per model</text>
+
+  <line x1="600" y1="1104" x2="600" y2="1126" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <rect x="502" y="1126" width="196" height="48" rx="8" fill="#dbeafe" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="600" y="1146" text-anchor="middle" font-size="11" font-weight="700" fill="#1e3a8a">22. Archive File on SFTP</text>
+  <text x="600" y="1162" text-anchor="middle" font-size="9" fill="#1d4ed8">Move to /processed · timestamp rename</text>
+
+  <!-- Error branch -->
+  <line x1="468" y1="1010" x2="730" y2="1010" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arre)"/>
+  <text x="600" y="1004" text-anchor="middle" font-size="9" fill="#dc2626">on parse error</text>
+
+  <rect x="732" y="986" width="326" height="48" rx="8" fill="#fee2e2" stroke="#f87171" stroke-width="1.5"/>
+  <text x="895" y="1006" text-anchor="middle" font-size="11" font-weight="700" fill="#dc2626">23. Parse Error Log Doctype</text>
+  <text x="895" y="1022" text-anchor="middle" font-size="9" fill="#dc2626">Row # · Reason · Timestamp · File name</text>
+
+  <line x1="895" y1="1034" x2="895" y2="1056" stroke="#dc2626" stroke-width="1.5" marker-end="url(#arre)"/>
+
+  <rect x="732" y="1056" width="326" height="48" rx="8" fill="#fecaca" stroke="#f87171" stroke-width="1.5"/>
+  <text x="895" y="1076" text-anchor="middle" font-size="11" font-weight="700" fill="#dc2626">24. Alert Accountant</text>
+  <text x="895" y="1092" text-anchor="middle" font-size="9" fill="#dc2626">ERPNext Notification · Bad rows skipped · manual review</text>
+
+  <!-- ═══════ LEGEND ═══════ -->
+  <rect x="30" y="1208" width="1040" height="96" rx="10" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="60" y="1228" font-size="11" font-weight="700" fill="#1e293b">Legend</text>
+
+  <rect x="60" y="1240" width="16" height="16" rx="4" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.2"/>
+  <text x="84" y="1252" font-size="10" fill="#475569">Sales Staff / SAP Actor</text>
+
+  <rect x="230" y="1240" width="16" height="16" rx="4" fill="#dbeafe" stroke="#3b82f6" stroke-width="1.2"/>
+  <text x="254" y="1252" font-size="10" fill="#475569">ERPNext Standard Doctype</text>
+
+  <rect x="430" y="1240" width="16" height="16" rx="4" fill="#dcfce7" stroke="#22c55e" stroke-width="1.2"/>
+  <text x="454" y="1252" font-size="10" fill="#475569">Integration / Middleware</text>
+
+  <rect x="620" y="1240" width="16" height="16" rx="4" fill="#ede9fe" stroke="#8b5cf6" stroke-width="1.2"/>
+  <text x="644" y="1252" font-size="10" fill="#475569">ERPNext Custom Doctype</text>
+
+  <rect x="820" y="1240" width="16" height="16" rx="4" fill="#fee2e2" stroke="#f87171" stroke-width="1.2"/>
+  <text x="844" y="1252" font-size="10" fill="#475569">Error / Audit Path</text>
+
+  <!-- Arrow legend -->
+  <line x1="60" y1="1282" x2="100" y2="1282" stroke="#1d4ed8" stroke-width="1.5" marker-end="url(#arrb)"/>
+  <text x="108" y="1286" font-size="10" fill="#475569">Forward flow</text>
+
+  <line x1="230" y1="1282" x2="270" y2="1282" stroke="#7c3aed" stroke-width="1.5" marker-end="url(#arrp)"/>
+  <text x="278" y="1286" font-size="10" fill="#475569">Return / callback</text>
+
+  <line x1="430" y1="1282" x2="470" y2="1282" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arre)"/>
+  <text x="478" y="1286" font-size="10" fill="#475569">Error branch (dashed)</text>
+
+  <!-- Marker defs -->
+  <defs>
+    <marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#64748b"/>
+    </marker>
+    <marker id="arrb" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#1d4ed8"/>
+    </marker>
+    <marker id="arrg" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#166534"/>
+    </marker>
+    <marker id="arro" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#b45309"/>
+    </marker>
+    <marker id="arrp" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#7c3aed"/>
+    </marker>
+    <marker id="arre" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#dc2626"/>
+    </marker>
+  </defs>
+</svg>
