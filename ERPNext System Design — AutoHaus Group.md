@@ -4,7 +4,7 @@
 **Date:** March 2026
 
 ---
-<img src="autohaus_workflow.svg" width="1000">
+<img src="autohaus_workflow.svg" width="1400">
 ---
 
 
