@@ -1,6 +1,6 @@
 # ERPNext System Design — AutoHaus Group
 
-**Version:** v15 (self-hosted, on-premise)  
+**Version:** v14 (self-hosted, on-premise)  
 **Date:** March 2026
 
 ---
